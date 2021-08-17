@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>412</width>
+    <height>179</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>391</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QGroupBox {
+  color: #333333;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+QGroupBox &gt; * {
+  color: #333333;
+  background-color: transparent;
+}</string>
+   </property>
+   <property name="title">
+    <string>Save From...</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <widget class="QCheckBox" name="seoInput_name">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>30</y>
+      <width>141</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCheckBox {
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  border: 1px solid #2d9cdb;
+}
+
+QCheckBox:hover {
+  color: #fff;
+  background-color: #2f80ed;
+}
+
+QCheckBox:disabled {
+  color: #828282;
+  background-color: #bdbdbd;
+  border: none;
+}</string>
+    </property>
+    <property name="text">
+     <string>Seo by Input Name</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkMD5_code">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>7</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCheckBox {
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  border: 1px solid #2d9cdb;
+}
+
+QCheckBox:hover {
+  color: #fff;
+  background-color: #2f80ed;
+}
+
+QCheckBox:disabled {
+  color: #828282;
+  background-color: #bdbdbd;
+  border: none;
+}</string>
+    </property>
+    <property name="text">
+     <string>Thay đổi MD5 Code</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="pixel500">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>70</y>
+      <width>91</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>7</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QRadioButton {
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  border: 1px solid #2d9cdb;
+}
+
+QRadioButton:hover {
+  color: #fff;
+  background-color: #2f80ed;
+}
+
+QRadioButton:disabled {
+  color: #828282;
+  background-color: #bdbdbd;
+  border: none;
+}</string>
+    </property>
+    <property name="text">
+     <string>500 x 500 px</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="pixel720">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>70</y>
+      <width>101</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>7</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QRadioButton {
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  border: 1px solid #2d9cdb;
+}
+
+QRadioButton:hover {
+  color: #fff;
+  background-color: #2f80ed;
+}
+
+QRadioButton:disabled {
+  color: #828282;
+  background-color: #bdbdbd;
+  border: none;
+}</string>
+    </property>
+    <property name="text">
+     <string>720 x 720 px</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="pixel1000">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>70</y>
+      <width>111</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>7</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QRadioButton {
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  border: 1px solid #2d9cdb;
+}
+
+QRadioButton:hover {
+  color: #fff;
+  background-color: #2f80ed;
+}
+
+QRadioButton:disabled {
+  color: #828282;
+  background-color: #bdbdbd;
+  border: none;
+}</string>
+    </property>
+    <property name="text">
+     <string>1000 x 1000 px</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>100</y>
+      <width>341</width>
+      <height>1</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(85, 170, 255);</string>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="choosePath_save">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>120</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;All changes are undone and the first image is restored.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  border: 1px solid #2d9cdb;
+  padding: 4px;
+  border-radius: 2px;
+  background-color: transparent;
+  color: #333333;
+}
+
+QPushButton:hover {
+  color: #fff;
+  background-color: #2f80ed;
+}
+
+QPushButton:disabled {
+  color: #828282;
+  background-color: #bdbdbd;
+  border: none;
+}
+
+QMessageBox QPushButton {
+  padding: 5px 20px;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Lưu Với Lựa Chọn</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

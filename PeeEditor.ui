@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PiMage</class>
+ <widget class="QMainWindow" name="PiMage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1032</width>
+    <height>708</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>PiMage</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+  background-color: #f2f2f2;
+  color: #333333;
+}
+
+QMenuBar {
+  background-color: #fff;
+  margin: 0px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+QMenuBar::item {
+  background-color: #fff;
+  color: #333333;
+  padding: 4px 10px;
+  border-radius: 5px;
+}
+
+QMenuBar::item:selected {
+  background-color: #2d9cdb;
+  color: #fff;
+}
+
+QMenuBar::item:pressed {
+  background-color: #2f80ed;
+}
+
+QMenu {
+  background-color: #fff;
+  color: #333333;
+  padding: 2px;
+}
+
+QMenu::separator {
+  color: #bdbdbd;
+}
+
+QMenu::item {
+  padding: 5px 25px;
+  border: 1px;
+  border-radius: 5px;
+}
+
+QMenu::item:disabled {
+  color: #828282;
+  background-color: #bdbdbd;
+  border-radius: 0;
+}
+
+QMenu::item:selected {
+  background-color: #2f80ed;
+  color: #fff;
+}
+
+QMenu::item:pressed {
+  background-color: #2f80ed;
+}
+
+QGroupBox {
+  color: #333333;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+QGroupBox &gt; * {
+  color: #333333;
+  background-color: transparent;
+}
+
+QPushButton {
+  border: 1px solid #2d9cdb;
+  padding: 4px;
+  border-radius: 2px;
+  background-color: transparent;
+  color: #333333;
+}
+
+QPushButton:hover {
+  color: #fff;
+  background-color: #2f80ed;
+}
+
+QPushButton:disabled {
+  color: #828282;
+  background-color: #bdbdbd;
+  border: none;
+}
+
+QMessageBox QPushButton {
+  padding: 5px 20px;
+}
+
+QLineEdit {
+  padding: 5px;
+  border: none;
+  background-color: #fff;
+  border-radius: 5px;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="filtersGroupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>410</y>
+      <width>1011</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Tùy Biến</string>
+    </property>
+    <widget class="QListWidget" name="list_khung_san_pham">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>20</y>
+       <width>511</width>
+       <height>221</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QListWidget {
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  border: 1px solid #2d9cdb;
+}
+
+QListWidget::item {
+  border-radius: 5px;
+  background-color: transparent;
+  color: #333333;
+}
+
+QListWidget::item:hover {
+  color: #fff;
+  background-color: #2d9cdb;
+}
+
+QListWidget::item:selected {
+  color: #fff;
+  background-color: #2f80ed;
+}</string>
+     </property>
+     <property name="movement">
+      <enum>QListView::Free</enum>
+     </property>
+     <property name="flow">
+      <enum>QListView::LeftToRight</enum>
+     </property>
+     <property name="isWrapping" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="viewMode">
+      <enum>QListView::IconMode</enum>
+     </property>
+    </widget>
+    <widget class="QToolBox" name="toolBox">
+     <property name="geometry">
+      <rect>
+       <x>750</x>
+       <y>20</y>
+       <width>251</width>
+       <height>221</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QToolBox {
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  border: 1px solid #2d9cdb;
+}
+
+QToolBox::tab {
+    background: #009deb;
+    border-radius: 5px;
+    color: black;
+}
+
+QToolBox::tab:first {
+    background: #4ade00;
+    border-radius: 5px;
+    color: black;
+}
+
+QToolBox::tab:last {
+    background: #f95300;
+    border-radius: 5px;
+    color: black;
+}
+
+QToolBox::tab:selected { /* italicize selected tabs */
+    font: italic;
+    color: white;
+}</string>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="page">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>249</width>
+        <height>157</height>
+       </rect>
+      </property>
+      <attribute name="label">
+       <string>...Thêm Khung Của Bạn...</string>
+      </attribute>
+      <widget class="QGroupBox" name="rightToolsGroupBox_4">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>251</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QPushButton" name="addFrame_clicked">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>0</y>
+          <width>41</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;All changes are undone and the first image is restored.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>+</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="brightnessTextLabel_14">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>0</y>
+          <width>131</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>7</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  border: none;
+  border-radius: 5px;
+  background-color: #e0e0e0;
+}
+
+QMessageBox QLabel {
+  background-color: transparent;
+}</string>
+        </property>
+        <property name="text">
+         <string>Thêm Khung Sản Phẩm:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="imageKhungAdd">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>30</y>
+          <width>121</width>
+          <height>121</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  border: 1px solid #2d9cdb;
+}
+
+QMessageBox QLabel {
+  background-color: transparent;
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Plain</enum>
+        </property>
+        <property name="lineWidth">
+         <number>1</number>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="check_remove_ai">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>50</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>7</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Remove AI....</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="apllyFrames_clicked">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>120</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;All changes are undone and the first image is restored.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>Thêm</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="download_ImgNotGB">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>31</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;All changes are undone and the first image is restored.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>DL</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>249</width>
+        <height>157</height>
+       </rect>
+      </property>
+      <attribute name="label">
+       <string>....Thêm Logo Của Bạn....</string>
+      </attribute>
+      <widget class="QGroupBox" name="rightToolsGroupBox_3">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>251</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="brightnessTextLabel_7">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>50</y>
+          <width>41</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>7</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Size:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="apllyLogo_clicked">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>120</y>
+          <width>41</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;All changes are undone and the first image is restored.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>OK</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="imageLogoAdd">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>40</y>
+          <width>71</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  border: 1px solid #2d9cdb;
+}
+
+QMessageBox QLabel {
+  background-color: transparent;
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Plain</enum>
+        </property>
+        <property name="lineWidth">
+         <number>1</number>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="addLogo_clicked">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>10</y>
+          <width>51</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>7</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;All changes are undone and the first image is restored.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>Logo</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="brightnessTextLabel_8">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>50</y>
+          <width>61</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>7</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>| Lề Trên</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="left_LogoValue">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>130</y>
+          <width>51</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QSpinBox {
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  border: 1px solid #2d9cdb;
+}</string>
+        </property>
+        <property name="wrapping">
+         <bool>false</bool>
+        </property>
+        <property name="frame">
+         <bool>true</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="readOnly">
+         <bool>false</bool>
+        </property>
+        <property name="buttonSymbols">
+         <enum>QAbstractSpinBox::NoButtons</enum>
+        </property>
+        <property name="accelerated">
+         <bool>false</bool>
+        </property>
+        <property name="keyboardTracking">
+         <bool>true</bool>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>1000</number>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="brightnessTextLabel_10">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>110</y>
+          <width>111</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>7</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>-  Lề Trái ( 0-&gt; 1000)</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="top_LogoValue">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>70</y>
+          <width>41</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QSpinBox {
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  border: 1px solid #2d9cdb;
+}</string>
+        </property>
+        <property name="wrapping">
+         <bool>false</bool>
+        </property>
+        <property name="frame">
+         <bool>true</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="readOnly">
+         <bool>false</bool>
+        </property>
+        <property name="buttonSymbols">
+         <enum>QAbstractSpinBox::NoButtons</enum>
+        </property>
+        <property name="accelerated">
+         <bool>false</bool>
+        </property>
+        <property name="keyboardTracking">
+         <bool>true</bool>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>1000</number>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="size_LogoValue">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>70</y>
+          <width>41</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QSpinBox {
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  border: 1px solid #2d9cdb;
+}</string>
+        </property>
+        <property name="wrapping">
+         <bool>false</bool>
+        </property>
+        <property name="frame">
+         <bool>true</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="readOnly">
+         <bool>false</bool>
+        </property>
+        <property name="buttonSymbols">
+         <enum>QAbstractSpinBox::NoButtons</enum>
+        </property>
+        <property name="accelerated">
+         <bool>false</bool>
+        </property>
+        <property name="keyboardTracking">
+         <bool>true</bool>
+        </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
+        <property name="value">
+         <number>100</number>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="removeLogo_clicked">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>10</y>
+          <width>41</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;All changes are undone and the first image is restored.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>X</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>10</y>
+          <width>1</width>
+          <height>141</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="brightnessTextLabel_9">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>90</y>
+          <width>61</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>7</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>0 -&gt; 1000</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QTreeWidget" name="tree_folder_open">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>211</width>
+       <height>221</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTreeWidget {
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  border: 1px solid #2d9cdb;
+}</string>
+     </property>
+     <column>
+      <property name="text">
+       <string notr="true">1</string>
+      </property>
+     </column>
+    </widget>
+   </widget>
+   <widget class="QListWidget" name="list_product_widget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>1011</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QListWidget {
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  border: 1px solid #2d9cdb;
+}
+
+QListWidget::item {
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #333333;
+}
+
+QListWidget::item:hover {
+  color: #fff;
+  background-color: #2d9cdb;
+}
+
+QListWidget::item:selected {
+  color: #fff;
+  background-color: #2f80ed;
+}</string>
+    </property>
+    <property name="flow">
+     <enum>QListView::LeftToRight</enum>
+    </property>
+    <property name="isWrapping" stdset="0">
+     <bool>true</bool>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="viewMode">
+     <enum>QListView::IconMode</enum>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1032</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="active_WithKey"/>
+    <addaction name="separator"/>
+    <addaction name="actionOpen_File"/>
+    <addaction name="actionOpen_Folder"/>
+    <addaction name="separator"/>
+    <addaction name="actionSave_Only"/>
+    <addaction name="actionSave_as"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Hỗ Trợ</string>
+    </property>
+    <addaction name="action_Information"/>
+    <addaction name="action_Contact"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionOpen_File">
+   <property name="text">
+    <string>(Chọn)  Hình Ảnh</string>
+   </property>
+  </action>
+  <action name="actionSave_Only">
+   <property name="text">
+    <string>(Lưu) Hình Ảnh</string>
+   </property>
+  </action>
+  <action name="actionSave_as">
+   <property name="text">
+    <string>(Lưu) Thư Mục Hình Ảnh...</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Đóng Chương Trình ()</string>
+   </property>
+  </action>
+  <action name="action_Information">
+   <property name="text">
+    <string>Thông Tin Phần Mềm</string>
+   </property>
+  </action>
+  <action name="action_Contact">
+   <property name="text">
+    <string>Liên Hệ Hỗ Trợ</string>
+   </property>
+  </action>
+  <action name="actionOpen_Folder">
+   <property name="text">
+    <string>(Chọn) Thư Mục Hình Ảnh</string>
+   </property>
+  </action>
+  <action name="active_WithKey">
+   <property name="text">
+    <string>Active With Key...</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
